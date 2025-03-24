@@ -2,6 +2,7 @@ import './style.css';
 import { useState } from 'react';
 import ReactDOM from 'react-dom/client'; 
 import SearchBar from './components/SearchBar';
+import ProductList from './components/ProductList';
 
 const App = () => {
   console.log('ALO')
@@ -21,6 +22,7 @@ const App = () => {
     <div className="app">
       <h1>Scraper Products</h1>
       <SearchBar onSearch={handleSearch} />
+      <ProductList products={products} />
     </div>
   );
 };
