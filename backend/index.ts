@@ -8,8 +8,12 @@ const PORT = 3000;
 app.use(cors());
 
 app.get('/api/scrape', async (req: any, res: any) => {
-  console.log('Done', req.body);
-  return res.status(200).json({ message: 'Scraping done!' });
+  const keyword = req.query.keyword;
+
+  if (!keyword) {
+    return res.status(400).json({ error: 'Keyword is required' });
+  }
+  return res.status(200).json({ message: keyword });
 });
 
 app.listen(PORT, () => {
