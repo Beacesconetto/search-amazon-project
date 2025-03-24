@@ -42,10 +42,23 @@ app.get('/api/scrape', async (req: any, res: any) => {
       const title = item.querySelector('.poly-component__title')?.textContent?.trim();
       const price = item.querySelector('.poly-price__current')?.textContent?.trim();
       const link = item.querySelector('.poly-component__title')?.getAttribute('href');
-      const image = item.querySelector('.poly-component__picture')?.getAttribute('src');
+      const divComImagem = item.querySelector('.poly-card__portada'); 
+      const image = divComImagem?.querySelector('img')?.getAttribute('src'); 
+      const starsText = item.querySelector('.poly-component__reviews')?.textContent;
+
+      let rating = '';
+      let totalReviews = '';
+
+      if (starsText) {
+        const match = starsText.match(/Avaliação\s([\d,]+)\sde\s5\.\s\(([\d,.]+)\savaliações\)/);
+        if (match) {
+          rating = match[1]; 
+          totalReviews = match[2].replace('.', '').replace(',', ''); 
+        }
+      }
 
       if (title && price && link && image) {
-        results.push({ title, price, link, image });
+        results.push({ title, price, link, image, rating, totalReviews  });
       } else {
         console.log("Item não completo ou não encontrado, pulando.");
       }

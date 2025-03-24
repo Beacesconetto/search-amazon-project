@@ -94,3 +94,24 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.loading-icon {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.spinner {
+  font-size: 2rem;
+  animation: spin 1s linear infinite;
+  color: #555;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
