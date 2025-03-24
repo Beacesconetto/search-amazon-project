@@ -9,7 +9,7 @@ This backend server is responsible for scraping product data from **Mercado Livr
 
 ## Requirements
 - Node.js (version 14 or higher)
-- Bun runtime for fast execution (optional but recommended)
+- Bun (version 1.2.5 or higher)
 
 ## Installation
 1. Clone this repository:

@@ -16,7 +16,7 @@ This project is a simple web scraper that fetches product data from the **Mercad
 1. Clone this repository:
    ```bash
    git clone https://github.com/Beacesconetto/search-amazon-project
-   cd frontend
+   cd scrape-frontend
 
 2. Install dependencies:
    ```bash
